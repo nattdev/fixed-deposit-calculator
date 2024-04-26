@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const CalculatorContext = createContext([]);
 
@@ -11,10 +11,21 @@ export const useCalculator = () => {
     }
 }
 
-export const CalculatorContextProvider = ({children}) => {
+export const CalculatorContextProvider = ({ children }) => {
 
-    return(
-        <CalculatorContext.Provider value={{}}>
+    const initialDepositValues = {
+        currency: "soles",
+        capital: 0,
+        trea: 0,
+        term: 90,
+        period: "al-finalizar",
+    }
+
+    const [deposit, setDeposit] = useState(initialDepositValues);
+    const [interestEarned, setInterestEarned] = useState(0);
+
+    return (
+        <CalculatorContext.Provider value={{ deposit, setDeposit, interestEarned, setInterestEarned }}>
             {children}
         </CalculatorContext.Provider>
     )
