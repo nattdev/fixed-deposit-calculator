@@ -61,19 +61,19 @@ function DepositConfig() {
     }
 
     return (
-        <div>
-            <section>
+        <div className="flex flex-col items-center text-center text-lg">
+            <section className="flex gap-6 m-6 justify-center items-center">
                 <div>
-                    <input id="soles" type="radio" name="currency" value="soles" onChange={handleCurrencyOption} defaultChecked={true}>
+                    <input id="soles" type="radio" name="currency" value="soles" onChange={handleCurrencyOption} defaultChecked={true} className="hidden peer">
                     </input>
-                    <label htmlFor="soles">Soles
+                    <label htmlFor="soles" className="rounded-3xl py-1 px-9 inline-block w-22 border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C55] cursor-pointer text-[#1C4494] font-medium">Soles
                     </label>
                 </div>
-                <p>Moneda</p>
+                <p className="font-medium">Moneda</p>
                 <div>
-                    <input id="dolares" type="radio" name="currency" value="dolares" onChange={handleCurrencyOption}>
+                    <input id="dolares" type="radio" name="currency" value="dolares" onChange={handleCurrencyOption} className="hidden peer">
                     </input>
-                    <label htmlFor="dolares">Dólares
+                    <label htmlFor="dolares" className="p-2 rounded-3xl py-1 px-9 inline-block w-22 border-2 border-slate-600 peer-checked:bg-[#3166CF22] border-[#17246C77] cursor-pointer text-[#1C4494] font-medium">Dólares
                     </label>
                 </div>
             </section>
