@@ -4,6 +4,7 @@ function DepositConfig() {
 
     const { deposit, setDeposit } = useCalculator();
     const { interestEarned, setInterestEarned } = useCalculator();
+    const { interestPeriodEarned, setInterestPeriodEarned } = useCalculator();
 
     function handleCurrencyOption(event) {
         const newCurrency = event.target.value;
@@ -52,9 +53,11 @@ function DepositConfig() {
 
         const interestCalculation = (((1 + (i * 1 / 100)) ** (n / 360) - 1) * k);
 
-        const interestPeriodEarnead = deposit["period"] == "mensual" ? interestCalculation / (n / 30) : interestCalculation;
+        const interestPeriodEarnedCalculation = interestCalculation / (n / 30);
 
-        setInterestEarned(interestPeriodEarnead.toFixed(2));
+        const interestTotal = interestCalculation;
+        setInterestPeriodEarned(interestPeriodEarnedCalculation.toFixed(2));
+        setInterestEarned(interestTotal.toFixed(2));
     }
 
     return (
@@ -127,7 +130,7 @@ function DepositConfig() {
             <button onClick={handleCalculate}>Calcular</button>
             <section>
                 <p>Interés Ganado</p>
-                <p>{deposit["currency"] == "soles" ? "S/. " : "$ "}{interestEarned}</p>
+                <p>{deposit["currency"] == "soles" ? "S/. " : "$ "}{deposit["period"] == "mensual" ? interestPeriodEarned : interestEarned}</p>
             </section>
         </div>
     )
