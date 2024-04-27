@@ -1,4 +1,7 @@
 import { useCalculator } from "./CalculatorContext";
+import currencyIcon from "../assets/icons/currencyIcon.svg"
+import termIcon from "../assets/icons/termIcon.svg"
+import treaIcon from "../assets/icons/treaIcon.svg"
 
 function DepositConfig() {
 
@@ -77,27 +80,27 @@ function DepositConfig() {
                     </label>
                 </div>
             </section>
-            <section>
-                <div>
-                    <img src="#"></img>
+            <section className="flex mx-3">
+                <div className="flex items-center flex-col gap-2 w-2/6">
+                    <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
-                    <div>
-                        <span>{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
-                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0}></input>
+                    <div className="flex items-center justify-center relative">
+                        <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
+                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl pl-9"></input>
                     </div>
                 </div>
-                <div>
-                    <img src="#"></img>
+                <div className="flex items-center flex-col gap-2 w-2/6">
+                    <img src={treaIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>TREA</p>
-                    <div>
-                        <span>% </span>
-                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00}></input>
+                    <div className="flex items-center justify-center mx-3 relative">
+                        <span className="absolute left-0 pl-3">% </span>
+                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl pl-9"></input>
                     </div>
                 </div>
-                <div>
-                    <img src="#"></img>
+                <div className="flex items-center flex-col gap-2 w-2/6">
+                    <img src={termIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Plazo</p>
-                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"}>
+                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="h-8 w-full border-2 rounded-2xl pl-3">
                         <option value="90">90 días</option>
                         <option value="180">180 días</option>
                         <option value="360">360 días</option>
