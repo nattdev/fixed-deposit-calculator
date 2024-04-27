@@ -65,7 +65,7 @@ function DepositConfig() {
 
     return (
         <div className="flex flex-col items-center text-center text-lg">
-            <section className="flex gap-6 m-6 justify-center items-center">
+            <section id="currency" className="flex gap-6 m-6 justify-center items-center">
                 <div>
                     <input id="soles" type="radio" name="currency" value="soles" onChange={handleCurrencyOption} defaultChecked={true} className="hidden peer">
                     </input>
@@ -80,7 +80,7 @@ function DepositConfig() {
                     </label>
                 </div>
             </section>
-            <section className="flex m-3">
+            <section id="parameters" className="flex m-3">
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
@@ -107,7 +107,7 @@ function DepositConfig() {
                     </select>
                 </div>
             </section>
-            <section className="m-3">
+            <section id="interest-payment" className="m-3">
                 <p className="font-medium">Pago de Interés</p>
                 <ul className="flex gap-3 m-3">
                     <li>
@@ -131,7 +131,7 @@ function DepositConfig() {
                 </ul>
             </section>
             <button className="bg-[#1C4494] px-4 py-3 w-1/5 min-w-48 text-white rounded-full xl font-normal text-xl m-3" onClick={handleCalculate}>Calcular</button>
-            <section>
+            <section id="interest-earned">
                 <p>Interés Ganado</p>
                 <p>{deposit["currency"] == "soles" ? "S/. " : "$ "}{deposit["period"] == "mensual" ? interestPeriodEarned : interestEarned}</p>
             </section>
