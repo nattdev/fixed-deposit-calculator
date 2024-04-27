@@ -84,23 +84,23 @@ function DepositConfig() {
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
-                    <div className="flex items-center justify-center relative">
+                    <div className="flex items-center justify-center relative font-medium">
                         <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
-                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl pl-9"></input>
+                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl pl-9 text-xl"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={treaIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>TREA</p>
-                    <div className="flex items-center justify-center mx-3 relative">
-                        <span className="absolute left-0 pl-3">% </span>
+                    <div className="flex items-center justify-center mx-3 relative font-medium">
+                        <span className="absolute left-0 pl-3 ">% </span>
                         <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl pl-9"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={termIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Plazo</p>
-                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="h-8 w-full border-2 rounded-2xl pl-3">
+                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="h-8 w-full border-2 rounded-2xl pl-3 font-medium">
                         <option value="90">90 días</option>
                         <option value="180">180 días</option>
                         <option value="360">360 días</option>
