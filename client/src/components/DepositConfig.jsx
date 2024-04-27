@@ -80,7 +80,7 @@ function DepositConfig() {
                     </label>
                 </div>
             </section>
-            <section className="flex mx-3">
+            <section className="flex m-3">
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
@@ -107,13 +107,13 @@ function DepositConfig() {
                     </select>
                 </div>
             </section>
-            <section>
-                <p>Pago de Interés</p>
-                <ul>
+            <section className="m-3">
+                <p className="font-medium">Pago de Interés</p>
+                <ul className="flex gap-3 m-3">
                     <li>
-                        <input id="mensual" type="radio" name="interest-period" value="mensual" onChange={handlePeriodOption} >
+                        <input id="mensual" type="radio" name="interest-period" value="mensual" onChange={handlePeriodOption} className="hidden peer">
                         </input>
-                        <label htmlFor="mensual">Mensual
+                        <label htmlFor="mensual" className="p-2 rounded-3xl py-0 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] font-medium text-black">Mensual
                         </label>
                     </li>
                     {/* <li>
@@ -123,9 +123,9 @@ function DepositConfig() {
                         </label>
                     </li> */}
                     <li>
-                        <input id="al-finalizar" type="radio" name="interest-period" value="al-finalizar" onChange={handlePeriodOption} defaultChecked={true}>
+                        <input id="al-finalizar" type="radio" name="interest-period" value="al-finalizar" onChange={handlePeriodOption} defaultChecked={true} className="hidden peer">
                         </input>
-                        <label htmlFor="al-finalizar">Al finalizar
+                        <label htmlFor="al-finalizar" className="p-2 rounded-3xl py-0 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] text-black font-medium">Al finalizar
                         </label>
                     </li>
                 </ul>
