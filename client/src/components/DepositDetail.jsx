@@ -26,7 +26,7 @@ function DepositDetail() {
                     </div>
                     <div className="flex flex-col w-2/5  items-center text-center">
                         <img className="w-[56px] h-[56px] m-1" src={endInterestIcon}></img>
-                        <p><span className="underline underline-offset-2">Al finalizar</span>, el total de fondos será:</p>
+                        <p><span className="underline underline-offset-2">Al finalizar</span>, el interés total será:</p>
                         <p className="font-bold">{currencySymbol} {interestEarned}</p>
                     </div>
                 </div>
