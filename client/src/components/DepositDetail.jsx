@@ -1,4 +1,6 @@
 import { useCalculator } from "./CalculatorContext";
+import monthlyInterestIcon from "../assets/icons/monthlyInterestIcon.svg";
+import endInterestIcon from "../assets/icons/endInterestIcon.svg";
 
 function DepositDetail() {
     const { deposit } = useCalculator();
@@ -6,26 +8,26 @@ function DepositDetail() {
 
     const currencySymbol = deposit["currency"] == "soles" ? "S/. " : "$ ";
     return (
-        <section>
-            <header>
+        <section className="flex flex-col text-lg justify-center items-center my-6 font-normal w-fit m-auto mx-6">
+            <header className="font-medium mb-3 text-xl">
                 <p>Detalle de plazo fijo</p>
             </header>
-            <div>
-                <div>
-                    <p>Con un Capital de <span>{deposit["capital"]} {currencySymbol == "S/. " ? "soles" : "dólares"}</span></p>
-                    <p>por un Plazo de <span>{deposit["term"]} días</span></p>
-                    <p>con un TREA de <span>{deposit["trea"]}  %</span></p>
+            <div className="flex flex-col items-center text-center border-2 rounded-xl pt-3 pb-6">
+                <div className="mb-6">
+                    <p>Con un Capital de <span className="font-bold">{deposit["capital"]} {currencySymbol == "S/. " ? "soles" : "dólares"}</span></p>
+                    <p>por un Plazo de <span className="font-bold">{deposit["term"]} días</span></p>
+                    <p>con un TREA de <span className="font-bold">{deposit["trea"]}  %</span></p>
                 </div>
-                <div>
-                    <div>
-                        <img src="#"></img>
-                        <p>El interés <span>Mensual</span> ganado es:</p>
-                        <p>{currencySymbol} {interestPeriodEarned}</p>
+                <div className="flex justify-center gap-6">
+                    <div className="flex flex-col w-2/5  items-center text-center">
+                        <img className="w-[56px] h-[56px] m-1" src={monthlyInterestIcon}></img>
+                        <p>El interés <span className="underline underline-offset-2">Mensual</span> ganado es:</p>
+                        <p className="font-bold">{currencySymbol} {interestPeriodEarned}</p>
                     </div>
-                    <div>
-                        <img src="#"></img>
-                        <p><span>Al finalizar, </span>el total de fondos será:</p>
-                        <p>{currencySymbol} {interestEarned}</p>
+                    <div className="flex flex-col w-2/5  items-center text-center">
+                        <img className="w-[56px] h-[56px] m-1" src={endInterestIcon}></img>
+                        <p><span className="underline underline-offset-2">Al finalizar</span>, el total de fondos será:</p>
+                        <p className="font-bold">{currencySymbol} {interestEarned}</p>
                     </div>
                 </div>
             </div>
