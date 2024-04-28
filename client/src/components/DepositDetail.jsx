@@ -8,7 +8,7 @@ function DepositDetail() {
 
     const currencySymbol = deposit["currency"] == "soles" ? "S/. " : "$ ";
     return (
-        <section className="flex flex-col text-lg justify-center items-center my-6 font-normal w-fit m-auto">
+        <section className="flex flex-col sm:text-lg text-base justify-center items-center my-6 font-normal w-fit m-auto">
             <header className="font-medium mb-3 text-xl">
                 <p>Detalle de plazo fijo</p>
             </header>

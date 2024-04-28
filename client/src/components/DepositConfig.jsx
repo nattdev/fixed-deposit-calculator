@@ -64,29 +64,29 @@ function DepositConfig() {
     }
 
     return (
-        <div className="flex flex-col items-center text-center text-lg">
+        <div className="flex flex-col items-center text-center sm:text-lg text-base">
             <section id="currency" className="flex gap-6 m-6 justify-center items-center w-full">
                 <div className="w-1/4">
                     <input id="soles" type="radio" name="currency" value="soles" onChange={handleCurrencyOption} defaultChecked={true} className="hidden peer">
                     </input>
-                    <label htmlFor="soles" className="rounded-3xl py-1 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C55] cursor-pointer text-[#1C4494] font-medium">Soles
+                    <label htmlFor="soles" className="rounded-3xl py-1 sm:px-9 px-6 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C55] cursor-pointer text-[#1C4494] font-medium">Soles
                     </label>
                 </div>
                 <p className="font-medium">Moneda</p>
                 <div className="w-1/4">
                     <input id="dolares" type="radio" name="currency" value="dolares" onChange={handleCurrencyOption} className="hidden peer">
                     </input>
-                    <label htmlFor="dolares" className="p-2 rounded-3xl py-1 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer text-[#1C4494] font-medium">Dólares
+                    <label htmlFor="dolares" className="p-2 rounded-3xl py-1 sm:px-9 px-3 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer text-[#1C4494] font-medium">Dólares
                     </label>
                 </div>
             </section>
-            <section id="parameters" className="flex m-3">
+            <section id="parameters" className="flex my-3 sm:mx-3 mx-1">
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
                     <div className="flex items-center justify-center relative font-medium">
                         <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
-                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl pl-9 text-xl"></input>
+                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl sm:pl-9 pl-8 sm:text-xl text-base"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
@@ -94,27 +94,27 @@ function DepositConfig() {
                     <p>TREA</p>
                     <div className="flex items-center justify-center mx-3 relative font-medium">
                         <span className="absolute left-0 pl-3 ">% </span>
-                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl pl-9"></input>
+                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl sm:pl-9 pl-7 sm:text-xl text-base"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={termIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Plazo</p>
-                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="h-8 w-full border-2 rounded-2xl pl-3 font-medium">
+                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="w-full border-2 rounded-2xl pl-3 font-medium sm:text-xl text-base h-full">
                         <option value="90">90 días</option>
                         <option value="180">180 días</option>
                         <option value="360">360 días</option>
                     </select>
                 </div>
             </section>
-            <button className="bg-[#1C4494] px-4 py-3 w-1/5 min-w-48 text-white rounded-full xl font-normal text-xl m-3" onClick={handleCalculate}>Calcular</button>
+            <button className="bg-[#1C4494] sm:px-4 px-2 py-3 w-1/5 min-w-48 text-white rounded-full xl font-normal sm:text-xl text-lg m-3" onClick={handleCalculate}>Calcular</button>
             <section id="interest-payment" className="m-3">
                 <p className="font-medium">Pago de Interés</p>
                 <ul className="flex gap-3 m-3">
                     <li>
                         <input id="mensual" type="radio" name="interest-period" value="mensual" onChange={handlePeriodOption} className="hidden peer">
                         </input>
-                        <label htmlFor="mensual" className="p-2 rounded-3xl py-0 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] font-medium text-black">Mensual
+                        <label htmlFor="mensual" className="p-2 rounded-3xl py-0 sm:px-9 px-6 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] font-medium text-black">Mensual
                         </label>
                     </li>
                     {/* <li>
@@ -126,13 +126,13 @@ function DepositConfig() {
                     <li>
                         <input id="al-finalizar" type="radio" name="interest-period" value="al-finalizar" onChange={handlePeriodOption} defaultChecked={true} className="hidden peer">
                         </input>
-                        <label htmlFor="al-finalizar" className="p-2 rounded-3xl py-0 px-9 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] text-black font-medium">Al finalizar
+                        <label htmlFor="al-finalizar" className="p-2 rounded-3xl py-0 sm:px-9 px-6 inline-block border-2 border-slate-600 peer-checked:bg-[#3166CF22] peer-checked:border-[#17246C77] cursor-pointer peer-checked:text-[#1C4494] text-black font-medium">Al finalizar
                         </label>
                     </li>
                 </ul>
             </section>
             <section id="interest-earned" className="m-3">
-                <div className="text-[#1C4494] font-medium text-2xl">
+                <div className="text-[#1C4494] font-medium sm:text-2xl text-xl">
                     <p>Interés Ganado</p>
                     <p className="border-2 border-[#1C4494cc] rounded-full my-1">{deposit["currency"] == "soles" ? "S/. " : "$ "}{deposit["period"] == "mensual" ? interestPeriodEarned : interestEarned}</p>
                 </div>
