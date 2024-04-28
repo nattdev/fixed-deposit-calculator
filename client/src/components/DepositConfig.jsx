@@ -84,9 +84,9 @@ function DepositConfig() {
                 <div className="flex items-center flex-col gap-2 w-2/6">
                     <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
                     <p>Capital</p>
-                    <div className="flex items-center justify-center relative font-medium">
+                    <div className="flex items-center justify-center relative font-medium h-full">
                         <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
-                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl sm:pl-9 pl-8 sm:text-xl text-base"></input>
+                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl sm:pl-9 pl-8 sm:text-xl text-base h-full"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
@@ -94,7 +94,7 @@ function DepositConfig() {
                     <p>TREA</p>
                     <div className="flex items-center justify-center sm:mx-3 mx-2 relative font-medium h-full">
                         <span className="absolute left-0 pl-3 ">% </span>
-                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl sm:pl-9 pl-7 sm:text-xl text-base"></input>
+                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl sm:pl-9 pl-7 sm:text-xl text-base h-full"></input>
                     </div>
                 </div>
                 <div className="flex items-center flex-col gap-2 w-2/6">
