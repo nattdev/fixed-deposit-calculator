@@ -8,11 +8,11 @@ function DepositDetail() {
 
     const currencySymbol = deposit["currency"] == "soles" ? "S/. " : "$ ";
     return (
-        <section className="flex flex-col text-lg justify-center items-center my-6 font-normal w-fit m-auto mx-6">
+        <section className="flex flex-col text-lg justify-center items-center my-6 font-normal w-fit m-auto">
             <header className="font-medium mb-3 text-xl">
                 <p>Detalle de plazo fijo</p>
             </header>
-            <div className="flex flex-col items-center text-center border-2 rounded-xl pt-3 pb-6">
+            <div className="flex flex-col items-center text-center border-2 rounded-xl pt-3 pb-6 mx-6">
                 <div className="mb-6">
                     <p>Con un Capital de <span className="font-bold">{deposit["capital"]} {currencySymbol == "S/. " ? "soles" : "dólares"}</span></p>
                     <p>por un Plazo de <span className="font-bold">{deposit["term"]} días</span></p>
