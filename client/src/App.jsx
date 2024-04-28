@@ -1,6 +1,7 @@
 import { CalculatorContextProvider } from "./components/CalculatorContext";
 import DepositConfig from "./components/DepositConfig";
 import DepositDetail from "./components/DepositDetail";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <DepositConfig />
         <DepositDetail />
       </CalculatorContextProvider>
+      <Footer />
     </div>
   )
 }
