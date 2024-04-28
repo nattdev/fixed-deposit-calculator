@@ -107,7 +107,7 @@ function DepositConfig() {
                     </select>
                 </div>
             </section>
-            <button className="bg-[#1C4494] sm:px-4 px-2 py-3 w-1/5 min-w-48 text-white rounded-full xl font-normal sm:text-xl text-lg m-3" onClick={handleCalculate}>Calcular</button>
+            <button className="bg-[#1C4494] sm:px-4 px-2 sm:py-2 py-1 w-1/5 sm:min-w-48 min-w-36 text-white rounded-full xl font-normal sm:text-xl text-lg m-3" onClick={handleCalculate}>Calcular</button>
             <section id="interest-payment" className="m-3">
                 <p className="font-medium">Pago de Interés</p>
                 <ul className="flex gap-3 m-3">
