@@ -31,6 +31,8 @@ function DepositConfig() {
             ...prevState,
             term: newTerm
         }));
+        setInterestEarned(0);
+        setInterestPeriodEarned(0);
     }
 
     function handleCapitalInput(event) {
@@ -39,6 +41,8 @@ function DepositConfig() {
             ...prevState,
             capital: newCapital
         }));
+        setInterestEarned(0);
+        setInterestPeriodEarned(0);
     }
 
     function handleTreaInput(event) {
@@ -47,6 +51,8 @@ function DepositConfig() {
             ...prevState,
             trea: newTrea
         }));
+        setInterestEarned(0);
+        setInterestPeriodEarned(0);
     }
 
     function handleCalculate() {
