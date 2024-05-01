@@ -24,9 +24,10 @@ export const CalculatorContextProvider = ({ children }) => {
     const [deposit, setDeposit] = useState(initialDepositValues);
     const [interestEarned, setInterestEarned] = useState(0);
     const [interestPeriodEarned, setInterestPeriodEarned] = useState(0);
+    const [isCalculated, setIsCalculated] = useState(false);
 
     return (
-        <CalculatorContext.Provider value={{ deposit, setDeposit, interestEarned, setInterestEarned, interestPeriodEarned, setInterestPeriodEarned }}>
+        <CalculatorContext.Provider value={{ deposit, setDeposit, interestEarned, setInterestEarned, interestPeriodEarned, setInterestPeriodEarned, isCalculated, setIsCalculated}}>
             {children}
         </CalculatorContext.Provider>
     )
