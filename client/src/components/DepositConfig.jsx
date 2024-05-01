@@ -8,6 +8,7 @@ function DepositConfig() {
     const { deposit, setDeposit } = useCalculator();
     const { interestEarned, setInterestEarned } = useCalculator();
     const { interestPeriodEarned, setInterestPeriodEarned } = useCalculator();
+    const { setIsCalculated } = useCalculator();
 
     function handleCurrencyOption(event) {
         const newCurrency = event.target.value;
@@ -33,6 +34,7 @@ function DepositConfig() {
         }));
         setInterestEarned(0);
         setInterestPeriodEarned(0);
+        setIsCalculated(false);
     }
 
     function handleCapitalInput(event) {
@@ -43,6 +45,7 @@ function DepositConfig() {
         }));
         setInterestEarned(0);
         setInterestPeriodEarned(0);
+        setIsCalculated(false);
     }
 
     function handleTreaInput(event) {
@@ -53,6 +56,7 @@ function DepositConfig() {
         }));
         setInterestEarned(0);
         setInterestPeriodEarned(0);
+        setIsCalculated(false);
     }
 
     function handleCalculate() {
@@ -67,6 +71,7 @@ function DepositConfig() {
         const interestTotal = interestCalculation;
         setInterestPeriodEarned(interestPeriodEarnedCalculation.toFixed(2));
         setInterestEarned(interestTotal.toFixed(2));
+        setIsCalculated(true);
     }
 
     return (
