@@ -9,7 +9,7 @@ function DepositDetail() {
 
     const currencySymbol = deposit["currency"] == "soles" ? "S/. " : "$ ";
     return (
-        <section className="flex flex-col sm:text-lg text-base justify-center items-center my-6 font-normal w-fit m-auto relative">
+        <section className="flex flex-col sm:text-lg text-base justify-center items-center my-6 font-normal w-fit m-auto relative px-6">
             <header className="font-medium mb-3 text-xl">
                 <p>Detalle de plazo fijo</p>
             </header>
@@ -34,7 +34,7 @@ function DepositDetail() {
                         </div>
                     </div>
                 </div>
-                <span className={`w-[calc(100%_+_130px)] h-[50%] bg-[#1C4494] absolute left-[-50px] top-[80px] rotate-[25deg] z-10 ${isCalculated ? "animate-border-animation" : "hidden"}`}></span>
+                <span className={`w-[183%] h-[15%] bg-[#1C4494] absolute left-[-50%] top-[50%] rotate-[25deg] z-10 ${isCalculated ? "animate-border-animation" : "hidden"}`}></span>
             </div>
         </section>
     )
