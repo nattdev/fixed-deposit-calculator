@@ -59,7 +59,8 @@ function DepositConfig() {
         setIsCalculated(false);
     }
 
-    function handleCalculate() {
+    function handleCalculate(e) {
+        e.preventDefault();
         const i = parseFloat(deposit["trea"]);
         const n = parseFloat(deposit["term"]);
         const k = parseFloat(deposit["capital"]);
@@ -92,33 +93,37 @@ function DepositConfig() {
                 </div>
             </section>
             <section id="parameters" className="flex my-3 sm:mx-3 mx-2">
-                <div className="flex items-center flex-col gap-2 w-2/6">
-                    <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
-                    <p>Capital</p>
-                    <div className="flex items-center justify-center relative font-medium h-full">
-                        <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
-                        <input type="number" step={0.01} onChange={handleCapitalInput} defaultValue={0} className="w-full border-2 rounded-2xl sm:pl-9 pl-8 sm:text-xl text-base h-full"></input>
+                <form onSubmit={handleCalculate} className="flex flex-col items-center">
+                    <div className="flex my-3">
+                        <div className="flex items-center flex-col gap-2 w-2/6">
+                            <img src={currencyIcon} className="min-h-[56px] min-w-[56px]"></img>
+                            <p>Capital</p>
+                            <div className="flex items-center justify-center relative font-medium h-full">
+                                <span className="absolute left-0 pl-3">{deposit["currency"] == "soles" ? "S/. " : "$ "}</span>
+                                <input required type="number" step={0.01} onChange={handleCapitalInput} className="w-full border-2 rounded-2xl sm:pl-9 pl-8 sm:text-xl text-base h-full"></input>
+                            </div>
+                        </div>
+                        <div className="flex items-center flex-col gap-2 w-2/6">
+                            <img src={treaIcon} className="min-h-[56px] min-w-[56px]"></img>
+                            <p>TREA</p>
+                            <div className="flex items-center justify-center sm:mx-3 mx-2 relative font-medium h-full">
+                                <span className="absolute left-0 pl-3 ">% </span>
+                                <input required type="number" step={0.01} onChange={handleTreaInput} className="w-full border-2 rounded-2xl sm:pl-9 pl-7 sm:text-xl text-base h-full"></input>
+                            </div>
+                        </div>
+                        <div className="flex items-center flex-col gap-2 w-2/6">
+                            <img src={termIcon} className="min-h-[56px] min-w-[56px]"></img>
+                            <p>Plazo</p>
+                            <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="w-full border-2 rounded-2xl pl-3 font-medium sm:text-xl text-base h-full">
+                                <option value="90">90 días</option>
+                                <option value="180">180 días</option>
+                                <option value="360">360 días</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div className="flex items-center flex-col gap-2 w-2/6">
-                    <img src={treaIcon} className="min-h-[56px] min-w-[56px]"></img>
-                    <p>TREA</p>
-                    <div className="flex items-center justify-center sm:mx-3 mx-2 relative font-medium h-full">
-                        <span className="absolute left-0 pl-3 ">% </span>
-                        <input type="number" step={0.01} onChange={handleTreaInput} defaultValue={0.00} className="w-full border-2 rounded-2xl sm:pl-9 pl-7 sm:text-xl text-base h-full"></input>
-                    </div>
-                </div>
-                <div className="flex items-center flex-col gap-2 w-2/6">
-                    <img src={termIcon} className="min-h-[56px] min-w-[56px]"></img>
-                    <p>Plazo</p>
-                    <select id="days" name="days" onChange={handleTermOption} defaultValue={"90"} className="w-full border-2 rounded-2xl pl-3 font-medium sm:text-xl text-base h-full">
-                        <option value="90">90 días</option>
-                        <option value="180">180 días</option>
-                        <option value="360">360 días</option>
-                    </select>
-                </div>
+                    <button type="submit" className="bg-[#1C4494] sm:px-4 px-2 sm:py-2 py-1 w-1/5 sm:min-w-48 min-w-36 text-white rounded-full xl font-normal sm:text-xl text-lg m-3">Calcular</button>
+                </form>
             </section>
-            <button className="bg-[#1C4494] sm:px-4 px-2 sm:py-2 py-1 w-1/5 sm:min-w-48 min-w-36 text-white rounded-full xl font-normal sm:text-xl text-lg m-3" onClick={handleCalculate}>Calcular</button>
             <section id="interest-payment" className="m-3">
                 <p className="font-medium">Pago de Interés</p>
                 <ul className="flex gap-3 m-3">
