@@ -34,7 +34,7 @@ function DepositDetail() {
                         </div>
                     </div>
                 </div>
-                <span className={`w-[183%] h-[15%] bg-[#1C4494] absolute left-[-50%] top-[50%] rotate-[25deg] z-10 ${isCalculated ? "animate-border-animation" : "hidden"}`}></span>
+                <span className={`w-[183%] h-[15%] bg-[#1C4494] absolute left-[-50%] top-[50%] rotate-[25deg] z-10 ${isCalculated ? "animate-border-animation" : "invisible"}`}></span>
             </div>
         </section>
     )
