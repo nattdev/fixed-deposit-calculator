@@ -1,6 +1,6 @@
 import { useCalculator } from "./CalculatorContext";
-import monthlyInterestIcon from "../assets/icons/monthlyInterestIcon.svg";
-import endInterestIcon from "../assets/icons/endInterestIcon.svg";
+import EndInterestIcon from "../assets/icons/endInterestIcon.jsx";
+import MonthlyInterestIcon from "../assets/icons/monthlyInterestIcon.jsx";
 
 function DepositDetail() {
     const { deposit } = useCalculator();
@@ -13,7 +13,7 @@ function DepositDetail() {
             <header className="font-medium mb-3 text-xl">
                 <p>Detalle de plazo fijo</p>
             </header>
-            <div className="relative rounded-xl flex overflow-hidden">
+            <div className={` ${isCalculated ? "text-black" : "text-gray-300"} relative rounded-xl flex overflow-hidden transition-colors duration-700`}>
                 <div className="flex flex-col items-center text-center border-2 rounded-xl pt-3 pb-6 mx-0.5 my-0.5 px-8 relative z-30 bg-white w-full">
                     <div className="mb-6">
                         <p>Con un Capital de <span className="font-bold">{deposit["capital"]} {currencySymbol == "S/. " ? "soles" : "dólares"}</span></p>
@@ -22,12 +22,12 @@ function DepositDetail() {
                     </div>
                     <div className="flex justify-center gap-6">
                         <div className="flex flex-col w-2/5 items-center text-center sm:max-w-none max-w-32">
-                            <img className="w-[56px] h-[56px] m-1" src={monthlyInterestIcon}></img>
-                            <p>El interés <span className="underline underline-offset-2">Mensual</span> ganado es:</p>
+                            <MonthlyInterestIcon styles={`w-[56px] h-[56px] m-1 ${isCalculated ? "fill-black" : "fill-gray-300"} transition-colors duration-700`} />
+                            <p>El interés <span className="fillunderline underline-offset-2">Mensual</span> ganado es:</p>
                             <p className="font-bold">{currencySymbol} {interestPeriodEarned}</p>
                         </div>
                         <div className="flex flex-col w-2/5  items-center text-center sm:max-w-none max-w-32">
-                            <img className="w-[56px] h-[56px] m-1" src={endInterestIcon}></img>
+                            <EndInterestIcon styles={`w-[56px] h-[56px] m-1 ${isCalculated ? "fill-black" : "fill-gray-300"} transition-colors duration-700`} />
                             <p><span className="underline underline-offset-2">Al finalizar</span>, el interés total.
                                 será:</p>
                             <p className="font-bold">{currencySymbol} {interestEarned}</p>
