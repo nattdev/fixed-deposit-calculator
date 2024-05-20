@@ -23,12 +23,12 @@ function DepositDetail() {
                     <div className="flex justify-center gap-6">
                         <div className="flex flex-col w-2/5 items-center text-center sm:max-w-none max-w-32">
                             <MonthlyInterestIcon styles={`w-[56px] h-[56px] m-1 ${isCalculated ? "fill-black" : "fill-gray-300"} transition-colors duration-700`} />
-                            <p>El interés <span className="fillunderline underline-offset-2">Mensual</span> ganado es:</p>
+                            <p>El interés <span>Mensual</span> ganado es:</p>
                             <p className="font-bold">{currencySymbol} {interestPeriodEarned}</p>
                         </div>
                         <div className="flex flex-col w-2/5  items-center text-center sm:max-w-none max-w-32">
                             <EndInterestIcon styles={`w-[56px] h-[56px] m-1 ${isCalculated ? "fill-black" : "fill-gray-300"} transition-colors duration-700`} />
-                            <p><span className="underline underline-offset-2">Al finalizar</span>, el interés total.
+                            <p><span>Al finalizar</span>, el interés total.
                                 será:</p>
                             <p className="font-bold">{currencySymbol} {interestEarned}</p>
                         </div>
