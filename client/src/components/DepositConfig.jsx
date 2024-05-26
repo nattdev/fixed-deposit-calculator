@@ -150,7 +150,7 @@ function DepositConfig() {
             <section id="interest-earned" className="m-3">
                 <div className="text-[#1C4494] font-medium sm:text-2xl text-xl">
                     <p>Interés Ganado</p>
-                    <p className="border-2 border-[#1C4494cc] rounded-full my-1">{deposit["currency"] == "soles" ? "S/. " : "$ "}{deposit["period"] == "mensual" ? interestPeriodEarned : interestEarned}</p>
+                    <p className="border-2 border-[#1C4494cc] rounded-full my-1 p-2">{deposit["currency"] == "soles" ? "S/. " : "$ "}{deposit["period"] == "mensual" ? interestPeriodEarned : interestEarned}</p>
                 </div>
             </section>
         </div>
