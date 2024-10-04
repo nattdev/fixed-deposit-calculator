@@ -3,13 +3,12 @@ import DepositConfig from "./components/DepositConfig";
 import DepositDetail from "./components/DepositDetail";
 import DepositInfo from "./components/DepositInfo";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="flex flex-col">
-      <header className="sm:text-xl text-lg bg-sky-950 text-white text-center p-3 font-medium">
-        <h1>Calculadora Depósito a Plazo Fijo</h1>
-      </header>
+      <Header />
       <CalculatorContextProvider>
         <DepositConfig />
         <DepositDetail />
