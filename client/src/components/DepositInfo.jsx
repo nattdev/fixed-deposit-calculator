@@ -1,6 +1,6 @@
 function DepositInfo() {
     return (
-        <div className="flex justify-center items-center flex-col text-center my-6 mx-auto md:w-2/5 px-2 w-2/3">
+        <div className="flex justify-center items-center flex-col text-center my-6 mx-auto xl:w-3/5 md:px-32 px-8 w-full">
             <p className="text-xl font-semibold mb-2">¿Qué es un depósito a plazo fijo?</p>
             <p className="sm:text-base text-sm">
                 Es un instrumento financiero ofrecido por entidades bancarias y financieras donde un cliente deposita una cantidad de dinero por un período de tiempo específico a cambio de recibir un interés fijo predeterminado.
